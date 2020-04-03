@@ -63,10 +63,16 @@ class Point {
 
 
   draw(){
+    
     context.beginPath();
     context.fillStyle=this.color;
     context.arc(this.x,this.y,this.radius,0,Math.PI*2);
     context.stroke();
     context.fill();
+    }
+    
+    printText(){
+      context.font = this.font;
+      context.fillText(this.text, this.x, this.y - this.radius - 10);
     }
 }
