@@ -12,5 +12,13 @@ class LinearFunction {
         context.moveTo(0, this.y(0));
         context.lineTo(canvas.width, this.y(canvas.width));
         context.stroke();
+
+    }
+
+    intersection(line) {
+        let ans = {};
+        ans.x = (line.intercept - this.intercept) / (this.slope - line.slope);
+        ans.y = this.y(ans.x);
+        return ans;
     }
 }
